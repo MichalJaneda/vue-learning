@@ -6,12 +6,11 @@
     </form>
     <p v-if="todos.length">Last added TODO: {{ lastAdded }}</p>
     <ol v-if="todos.length">
-      <li
+      <TodoItem
         v-for="todo in todos"
-        :key="todo.text">
-        <strong>{{ todo.text }}</strong>
-        <small>{{ todo.created_at.toLocaleString() }}</small>
-      </li>
+        :text="todo"
+        :key="todo">
+      </TodoItem>
     </ol>
     <h4 v-else>No Todos</h4>
   </div>
@@ -19,28 +18,29 @@
 
 <script>
 import { last } from 'lodash'
+import TodoItem from "./TodoItem";
 
 export default {
+  components: {
+    TodoItem
+  },
   data: function () {
     return {
       todos: [
-        {
-          text: 'Todo',
-          created_at: new Date()
-        }
+        'TODO'
       ],
       next_todo: ''
     }
   },
   computed: {
     lastAdded: function () {
-      return last(this.todos).text
+      return last(this.todos)
     }
   },
   methods: {
     addTodo: function () {
       if (this.next_todo) {
-        this.todos.push({ text: this.next_todo, created_at: new Date() })
+        this.todos.push(this.next_todo)
         this.next_todo = ''
       }
     }
