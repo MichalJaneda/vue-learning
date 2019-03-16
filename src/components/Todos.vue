@@ -4,8 +4,11 @@
       <input v-model="next_todo">
       <button>Add TODO</button>
     </form>
+    <p v-if="todos.length">Last added TODO: {{ lastAdded }}</p>
     <ol v-if="todos.length">
-      <li v-for="todo in todos">
+      <li
+        v-for="todo in todos"
+        :key="todo.text">
         <strong>{{ todo.text }}</strong>
         <small>{{ todo.created_at.toLocaleString() }}</small>
       </li>
@@ -15,6 +18,8 @@
 </template>
 
 <script>
+import { last } from 'lodash'
+
 export default {
   data: function () {
     return {
@@ -25,6 +30,11 @@ export default {
         }
       ],
       next_todo: ''
+    }
+  },
+  computed: {
+    lastAdded: function () {
+      return last(this.todos).text
     }
   },
   methods: {
