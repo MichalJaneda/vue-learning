@@ -27,7 +27,10 @@ export default {
   },
   methods: {
     finish: function () {
-      this.finishedAt = new Date()
+      if (!this.finishedAt) {
+        this.finishedAt = new Date()
+        this.$emit('finish')
+      }
     }
   }
 }

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <p>
+      Todos: {{ finishedTodosCount }}/{{ todos.length}}
+    </p>
     <form @submit.prevent="addTodo">
       <input v-model="next_todo">
       <button>Add TODO</button>
@@ -9,7 +12,8 @@
       <TodoItem
         v-for="todo in todos"
         :text="todo"
-        :key="todo">
+        :key="todo"
+        @finish="finishedTodosCount += 1">
       </TodoItem>
     </ol>
     <h4 v-else>No Todos</h4>
@@ -29,7 +33,8 @@ export default {
       todos: [
         'TODO'
       ],
-      next_todo: ''
+      next_todo: '',
+      finishedTodosCount: 0
     }
   },
   computed: {
