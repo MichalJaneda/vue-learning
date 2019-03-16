@@ -2,16 +2,19 @@
   <div id="app">
     <h4>{{ new Date().toLocaleString() }}</h4>
     <Test></Test>
+    <Todos></Todos>
   </div>
 </template>
 
 <script>
 import Test from './components/Test.vue'
+import Todos from './components/Todos'
 
 export default {
   name: 'app',
   components: {
-    Test
+    Test,
+    Todos
   }
 }
 </script>
