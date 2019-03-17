@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  data: function () {
+  data () {
     return {
       next_todo: '',
       id: 1

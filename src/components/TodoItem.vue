@@ -15,8 +15,13 @@
 
 <script>
 export default {
-  props: ['text'],
-  data: function () {
+  props: {
+    text: {
+      type: String,
+      required: true
+    }
+  },
+  data () {
     return {
       finishedAt: null,
       createdAt: new Date()

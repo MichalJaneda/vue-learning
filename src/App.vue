@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <h4>{{ new Date().toLocaleString() }}</h4>
-    <Todos></Todos>
+    <TheTodoList></TheTodoList>
   </div>
 </template>
 
 <script>
-import Todos from './components/Todos'
+import TheTodoList from './components/TheTodoList'
 
 export default {
   name: 'app',
   components: {
-    Todos
+    TheTodoList
   }
 }
 </script>
