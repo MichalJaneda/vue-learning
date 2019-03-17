@@ -1,13 +1,13 @@
 <template>
-  <p>
-    Todos:&nbsp;
-    <span :class="{ completed }">
+  <div class="bg-purple text-white rounded shadow my-3 p-3">
+    <h6>Todos:</h6>
+    <small :class="{ 'text-success': completed, 'font-weight-bold': completed }">
       {{ finishedTodosCount }}/{{ todosCount }}
-    </span>
-    <transition name="fade">
-      <span v-show="completed">&#10003;</span>
-    </transition>
-  </p>
+      <transition name="fade">
+        <span v-show="completed">&#10003;</span>
+      </transition>
+    </small>
+  </div>
 </template>
 
 <script>
@@ -32,9 +32,8 @@ export default {
 </script>
 
 <style scoped>
-.completed {
-  color: greenyellow;
-  font-weight: 900;
+.bg-purple {
+  background-color: purple;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;

@@ -1,24 +1,36 @@
 <template>
-  <div>
+  <b-container fluid>
     <the-todo-summary
       :todos-count="todos.length"
       :finished-todos-count="finishedTodosCount">
     </the-todo-summary>
+
     <the-todo-adder @todo-added="todos.push($event)"></the-todo-adder>
-    <last-added-todo
-      v-if="todos.length"
-      :todo="lastAdded">
-    </last-added-todo>
-    <ol v-if="todos.length">
-      <todo-item
-        v-for="todo in todos"
-        :text="todo.text"
-        :key="todo.id"
-        @finish="finishedTodosCount++">
-      </todo-item>
-    </ol>
-    <h4 v-else>No Todos</h4>
-  </div>
+
+    <div class="bg-white rounded p-3 my-3">
+      <last-added-todo
+        v-if="todos.length"
+        :todo="lastAdded">
+      </last-added-todo>
+
+      <ul
+        class="list-group list-group-flush"
+        v-if="todos.length">
+        <todo-item
+          v-for="todo in todos"
+          :text="todo.text"
+          :key="todo.id"
+          @finish="finishedTodosCount++">
+        </todo-item>
+      </ul>
+
+      <h6
+        v-else
+        class="border-bottom border-gray">
+        No Todos
+      </h6>
+    </div>
+  </b-container>
 </template>
 
 <script>

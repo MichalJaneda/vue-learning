@@ -1,5 +1,5 @@
 <template>
-  <p>Last added TODO: {{ todo.text }}</p>
+  <h6 class="border-bottom border-gray">Last added TODO: {{ todo.text }}</h6>
 </template>
 
 <script>

@@ -1,8 +1,17 @@
 <template>
-  <form @submit.prevent="addTodo">
-    <input v-model="next_todo">
-    <button>Add TODO</button>
-  </form>
+  <div class="bg-white rounded p-3 my-3">
+    <b-form @submit.prevent="addTodo">
+      <label
+        class="sr-only"
+        for="next_todo">Next todo</label>
+      <b-input
+        id="next_todo"
+        placeholder="Next todo"
+        autocomplete="off"
+        v-model="next_todo">
+      </b-input>
+    </b-form>
+  </div>
 </template>
 
 <script>
