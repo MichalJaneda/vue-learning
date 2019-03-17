@@ -2,7 +2,10 @@
   <div>
     <p>Todos: {{ finishedTodosCount }}/{{ todos.length}}</p>
     <the-todo-adder @todo-added="todos.push($event)"></the-todo-adder>
-    <p v-if="todos.length">Last added TODO: {{ lastAdded.text }}</p>
+    <last-added-todo
+      v-if="todos.length"
+      :todo.sync="lastAdded">
+    </last-added-todo>
     <ol v-if="todos.length">
       <todo-item
         v-for="todo in todos"
@@ -19,11 +22,13 @@
 import { last } from 'lodash'
 import TodoItem from './TodoItem'
 import TheTodoAdder from './TheTodoAdder'
+import LastAddedTodo from './LastAddedTodo'
 
 export default {
   components: {
     TodoItem,
-    TheTodoAdder
+    TheTodoAdder,
+    LastAddedTodo
   },
   data () {
     return {
