@@ -19,11 +19,8 @@ export default {
   data: function () {
     return {
       finishedAt: null,
-      createdAt: null
+      createdAt: new Date()
     }
-  },
-  created: function () {
-    this.createdAt = new Date()
   },
   methods: {
     finish: function () {
