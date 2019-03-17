@@ -1,8 +1,13 @@
 <template>
-  <div id="app">
-    <h4>{{ new Date().toLocaleString() }}</h4>
-    <the-todo-list></the-todo-list>
-  </div>
+  <main id="app">
+    <b-container>
+      <b-row>
+        <b-col>
+          <the-todo-list></the-todo-list>
+        </b-col>
+      </b-row>
+    </b-container>
+  </main>
 </template>
 
 <script>
@@ -15,14 +20,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
