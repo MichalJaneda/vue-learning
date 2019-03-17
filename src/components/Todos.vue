@@ -22,7 +22,7 @@
 
 <script>
 import { last } from 'lodash'
-import TodoItem from "./TodoItem";
+import TodoItem from './TodoItem'
 
 export default {
   components: {

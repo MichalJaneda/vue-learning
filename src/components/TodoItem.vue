@@ -22,7 +22,7 @@ export default {
       createdAt: null
     }
   },
-  created: function() {
+  created: function () {
     this.createdAt = new Date()
   },
   methods: {
