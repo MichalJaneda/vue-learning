@@ -16,7 +16,7 @@ export default {
   methods: {
     addTodo: function () {
       if (this.next_todo) {
-        this.$emit('addTodo', { text: this.next_todo, id: this.id++ })
+        this.$emit('todo-added', { text: this.next_todo, id: this.id++ })
         this.next_todo = ''
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h4>{{ new Date().toLocaleString() }}</h4>
-    <TheTodoList></TheTodoList>
+    <the-todo-list></the-todo-list>
   </div>
 </template>
 
