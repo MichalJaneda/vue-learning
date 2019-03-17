@@ -8,7 +8,7 @@
         v-for="todo in todos"
         :text="todo.text"
         :key="todo.id"
-        @finish="finishedTodosCount += 1">
+        @finish="finishedTodosCount++">
       </TodoItem>
     </ol>
     <h4 v-else>No Todos</h4>
