@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .finished {
   text-decoration: line-through;
   color: gray;
