@@ -4,7 +4,7 @@
     <the-todo-adder @todo-added="todos.push($event)"></the-todo-adder>
     <last-added-todo
       v-if="todos.length"
-      :todo.sync="lastAdded">
+      :todo="lastAdded">
     </last-added-todo>
     <ol v-if="todos.length">
       <todo-item
