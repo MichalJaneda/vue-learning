@@ -3,7 +3,8 @@
     <b-container>
       <b-row>
         <b-col>
-          <the-todo-list></the-todo-list>
+          <the-navbar></the-navbar>
+          <router-view></router-view>
         </b-col>
       </b-row>
     </b-container>
@@ -11,12 +12,12 @@
 </template>
 
 <script>
-import TheTodoList from './components/TheTodoList'
+import TheNavbar from './components/TheNavbar'
 
 export default {
   name: 'app',
   components: {
-    TheTodoList
+    TheNavbar
   }
 }
 </script>
