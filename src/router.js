@@ -9,7 +9,8 @@ const routes = [
     component: Index,
     name: 'index',
     meta: {
-      title: 'Home'
+      title: 'Home',
+      inNav: true
     }
   },
   {
@@ -17,7 +18,8 @@ const routes = [
     component: TodoList,
     name: 'todos',
     meta: {
-      title: 'All todos'
+      title: 'All todos',
+      inNav: true
     }
   },
   {

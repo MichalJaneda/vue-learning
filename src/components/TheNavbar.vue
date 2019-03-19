@@ -10,7 +10,7 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item
-          v-for="route in $router.options.routes"
+          v-for="route in navigableRoutes"
           :to="{ name: route.name }"
           :key="route.name">
           {{ route.name | capitalize }}
@@ -19,6 +19,16 @@
     </b-collapse>
   </b-navbar>
 </template>
+
+<script>
+export default {
+  computed: {
+    navigableRoutes: function () {
+      return this.$router.options.routes.filter((route) => route.meta.inNav)
+    }
+  }
+}
+</script>
 
 <style>
 .router-link-active {
