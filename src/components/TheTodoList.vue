@@ -19,6 +19,7 @@
         <todo-item
           v-for="todo in todos"
           :text="todo.text"
+          :id="todo.id"
           :key="todo.id"
           @finish="finishedTodosCount++">
         </todo-item>

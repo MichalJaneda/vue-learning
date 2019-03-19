@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router'
 import Index from './views/Index'
 import TodoList from './views/TodoList'
+import Todo from './views/Todo'
 
 const routes = [
   {
@@ -17,6 +18,14 @@ const routes = [
     name: 'todos',
     meta: {
       title: 'All todos'
+    }
+  },
+  {
+    path: '/todos/:id',
+    component: Todo,
+    name: 'todo',
+    meta: {
+      title: 'Todo...'
     }
   }
 ]

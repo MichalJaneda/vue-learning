@@ -8,7 +8,11 @@
 
       <div class="media-body border-bottom border-gray lh-125">
         <strong class="d-block">
-          <span :class="{ finished: finishedAt, 'text-muted': finishedAt }">{{ text + ' ' }}</span>
+          <b-link
+            :to="{ name: 'todo', params: { id: 0 }}"
+            :class="{ finished: finishedAt, 'text-muted': finishedAt }">
+            {{ text + ' ' }}
+          </b-link>
           <small class="text-muted font-italic">Created at: {{ createdAt.toLocaleString() }}</small>
         </strong>
 
@@ -33,6 +37,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: Number,
+      required: true
+    },
     text: {
       type: String,
       required: true
