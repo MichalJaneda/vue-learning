@@ -6,12 +6,18 @@ const routes = [
   {
     path: '/',
     component: Index,
-    name: 'index'
+    name: 'index',
+    meta: {
+      title: 'Home'
+    }
   },
   {
     path: '/todos',
     component: TodoList,
-    name: 'todos'
+    name: 'todos',
+    meta: {
+      title: 'All todos'
+    }
   }
 ]
 
